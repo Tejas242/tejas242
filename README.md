@@ -1,22 +1,22 @@
 # My GitHub Profile
 
-🔭 I’m currently working on [current projects you're working on].
+🔭 I’m currently working on React Beginner Projects.
 
-🌱 I’m currently learning [what you're learning].
+🌱 I’m currently learning React.
 
-👯 I’m looking to collaborate on [projects you're interested in collaborating on].
+<!--👯 I’m looking to collaborate on [projects you're interested in collaborating on].
 
 🤔 I’m looking for help with [specific areas you need help with].
 
-💬 Ask me about [topics you're knowledgeable about].
+💡 I've recently contributed to open-source projects such as [open-source projects you've contributed to].-->
 
-💡 I've recently contributed to open-source projects such as [open-source projects you've contributed to].
+💬 Ask me about Python, Web, Competetive Programming, Data Science.
 
 📫 How to reach me:
-- Email: [Your email address]
-- LinkedIn: [Your LinkedIn profile link]
-- Twitter: [Your Twitter handle]
+- Email: [tmahajan09876@gmail.com](mailto:tmahajan09876@gmail.com)
+- LinkedIn: [linkedin.com/in/tejas242](https://linkedin.com/in/tejas242)
+- Twitter: [twitter.com/tejas_242](twitter.com/tejas_242)
 
-😄 Pronouns: [Your preferred pronouns]
+😄 Pronouns: Call Me Tejas
 
 ⚡ Fun fact: [Something interesting about you]
