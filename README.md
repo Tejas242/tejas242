@@ -19,4 +19,4 @@
 
 😄 Pronouns: Call Me Tejas
 
-⚡ Fun fact: ⚡ Fun fact: I am an introverted programmer who is always on the lookout for new challenges, from machine learning and cybersecurity to web development. I document my journey on my devblog, but when I'm not typing away, you can find me experimenting with React and building web applications. I might be quiet, but my passion for technology is loud and clear.
+⚡ Fun fact: I am an introverted programmer who is always on the lookout for new challenges, from machine learning and cybersecurity to web development. I document my journey on my devblog, but when I'm not typing away, you can find me experimenting with React and building web applications. I might be quiet, but my passion for technology is loud and clear.
