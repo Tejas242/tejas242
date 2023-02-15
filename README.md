@@ -10,7 +10,7 @@
 
 💡 I've recently contributed to open-source projects such as [open-source projects you've contributed to].-->
 
-💬 Ask me about Python, Web, Competetive Programming, Data Science.
+💬 Ask me about Python, Web, Competetive Programming, Data Science, Machine Learning.
 
 📫 How to reach me:
 - Email: [tmahajan09876@gmail.com](mailto:tmahajan09876@gmail.com)
