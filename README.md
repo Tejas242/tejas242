@@ -8,7 +8,7 @@
   <a href="https://screenager.vercel.app" target="_blank">
     <img alt="Blog" src="https://img.shields.io/badge/portfolio-blog-black?style=for-the-badge&logo=vercel&logoColor=white">
   </a>
-  <a href="https://github.com/tejasm7?tab=repositories" target="_blank">
+  <a href="https://github.com/tejas242?tab=repositories" target="_blank">
     <img alt="Projects" src="https://img.shields.io/badge/projects-GitHub-blue?style=for-the-badge&logo=github">
   </a>
 </p>
@@ -19,6 +19,7 @@
 
 - I build things that think — AI, LLMs, and real-world apps.
 - I love clean systems, efficient design, and making stuff just work.
+- I [write](https://screenager.vercel.app/blog)
 
 ---
 
