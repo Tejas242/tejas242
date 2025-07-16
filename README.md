@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://screenager.vercel.app" target="_blank">
+  <a href="https://screenager.dev" target="_blank">
     <img alt="Blog" src="https://img.shields.io/badge/portfolio-blog-black?style=for-the-badge&logo=vercel&logoColor=white">
   </a>
   <a href="https://github.com/tejas242?tab=repositories" target="_blank">
@@ -19,7 +19,7 @@
 
 - I build things that think — AI, LLMs, and real-world apps.
 - I love clean systems, efficient design, and making stuff just work.
-- I [write](https://screenager.vercel.app/blog)
+- I [write](https://screenager.dev/blog)
 
 ---
 
@@ -33,4 +33,4 @@
 ```
 
 **Latest Post**
-[The Curious Case of Bloom Filters](https://screenager.vercel.app/blog/2025/bloom-filters-demystified)
+[The Curious Case of Bloom Filters](https://screenager.dev/blog/2025/bloom-filters-demystified)
