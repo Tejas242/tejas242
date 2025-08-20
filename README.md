@@ -44,6 +44,7 @@
 **Latest from the Blog**
 
 <!-- BLOG:START -->
-[The Curious Case of Bloom Filters](https://screenager.dev/blog/2025/bloom-filters-demystified)  
-*More posts at [screenager.dev/blog](https://screenager.dev/blog)*
+- [Beyond %d: The Hidden World of printf Formats That Most Devs Never Use](https://screenager.dev/blog/2025/printf-formats-beyond-d)
+- [0x55555555 is Actually Alien Code &lpar;And Other Power Problem Adventures&rpar;](https://screenager.dev/blog/2025/bit-tricks-power-problems)
+- [The Three Body Problem](https://screenager.dev/blog/2025/the-three-body-problem)
 <!-- BLOG:END -->
