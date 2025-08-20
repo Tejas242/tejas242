@@ -1,4 +1,4 @@
-<h1 align="center">Hey, I'm Tejas 👋</h1>
+<h1 align="center">Hey, I'm Tejas</h1>
 
 <p align="center">
   <b>CS student | Systems & AI enthusiast | Always building</b>
@@ -12,6 +12,15 @@
     <img alt="Projects" src="https://img.shields.io/badge/projects-GitHub-blue?style=for-the-badge&logo=github">
   </a>
 </p>
+
+## GitHub Stats
+
+<div align="center">
+  
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=tejas242&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117)](https://github.com/tejas242)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=tejas242&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117)](https://github.com/tejas242)
+
+</div>
 
 ---
 
@@ -32,5 +41,9 @@
 > And much more...
 ```
 
-**Latest Post**
-[The Curious Case of Bloom Filters](https://screenager.dev/blog/2025/bloom-filters-demystified)
+**Latest from the Blog**
+
+<!-- BLOG:START -->
+[The Curious Case of Bloom Filters](https://screenager.dev/blog/2025/bloom-filters-demystified)  
+*More posts at [screenager.dev/blog](https://screenager.dev/blog)*
+<!-- BLOG:END -->

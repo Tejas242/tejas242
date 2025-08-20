@@ -1,0 +1,22 @@
+name: Update README with latest blog posts
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+  workflow_dispatch:     # Allow manual trigger
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update README with latest posts
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://screenager.dev/feed.xml"
+          max_post_count: 3
+          readme_path: "./README.md"
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          comment_tag_name: "BLOG"
