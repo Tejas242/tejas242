@@ -44,7 +44,7 @@
 **Latest from the Blog**
 
 <!-- BLOG:START -->
+- [Nerds Like to Ping](https://screenager.dev/blog/2025/why-ping-is-a-masterpiece-of-network-diagnostics)
 - [Git Diff Is Just LCS](https://screenager.dev/blog/2025/diff-algorithm-hunt-mcilroy)
 - [Programming L-caches](https://screenager.dev/blog/2025/l3-cache)
-- [Beyond %d: The Hidden World of printf Formats That Most Devs Never Use](https://screenager.dev/blog/2025/printf-formats-beyond-d)
 <!-- BLOG:END -->
