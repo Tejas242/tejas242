@@ -44,7 +44,7 @@
 **Latest from the Blog**
 
 <!-- BLOG:START -->
+- [What Actually Happens When You Press ^C?](https://screenager.dev/blog/2025/what-actually-happens-when-you-press-ctrl-c)
 - [Nerds Like to Ping](https://screenager.dev/blog/2025/why-ping-is-a-masterpiece-of-network-diagnostics)
 - [Git Diff Is Just LCS](https://screenager.dev/blog/2025/diff-algorithm-hunt-mcilroy)
-- [Programming L-caches](https://screenager.dev/blog/2025/l3-cache)
 <!-- BLOG:END -->
