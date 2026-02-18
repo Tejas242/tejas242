@@ -35,9 +35,10 @@
 **Tech I'm into**
 
 ```bash
+> Lang       | C++, Golang, Python, TypeScript
 > AI/ML      | Deep Learning, LLMs, Vision, Kaggle, HF
 > Systems    | Networking, OS, Linux (btw, I use Arch)
-> Full-Stack | FastAPI, Next.js, Vector DBs
+> Tools      | FastAPI, Next.js, Vector DBs, Postgres, Mongo
 > And much more...
 ```
 
