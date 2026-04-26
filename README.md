@@ -1,7 +1,7 @@
 <h1 align="center">Hey, I'm Tejas</h1>
 
 <p align="center">
-  <b>CS student | Systems & AI enthusiast | Always building</b>
+  <b>CS student | Systems & AI | Always building</b>
 </p>
 
 <p align="center">
