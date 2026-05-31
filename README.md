@@ -28,6 +28,7 @@
 
 - I build things that think — AI, LLMs, and real-world apps.
 - I love clean systems, efficient design, and making stuff just work.
+- I went to ICPC Regionals.
 - I [write](https://screenager.dev/blog)
 
 ---
