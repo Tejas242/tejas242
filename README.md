@@ -22,10 +22,11 @@ finally clicked.
 <!-- BLOG:START -->
 - [Everything falls into step](https://screenager.dev/blog/everything-falls-into-step/)
 - [Why can&#39;t you zip a zip?](https://screenager.dev/blog/why-you-cant-zip-a-zip/)
-- [Anatomy of a page](https://screenager.dev/blog/anatomy-of-a-page/)<!-- BLOG:END -->
+- [Anatomy of a page](https://screenager.dev/blog/anatomy-of-a-page/)
+<!-- BLOG:END -->
 
 #### elsewhere
 
-[x](https://x.com/the_screenager) · [linkedin](https://www.linkedin.com/in/tejas242) · [codeforces](https://codeforces.com/profile/screenager) · [leetcode](https://leetcode.com/u/screenager) · [email](mailto:hello@screenager.dev)
+[x](https://x.com/the_screenager) · [linkedin](https://www.linkedin.com/in/tejas242) · [codeforces](https://codeforces.com/profile/screenager) · [leetcode](https://leetcode.com/u/screenager)
 
-<sub>codeforces specialist, peak 1414 · leetcode top 14.7% · icpc regionals · patches in [npm/cli](https://github.com/npm/cli/pull/8683), [rsyslog/loganalyzer](https://github.com/rsyslog/loganalyzer/pull/101) and [goodroot/hyprwhspr](https://github.com/goodroot/hyprwhspr/pull/215)</sub>
+<sub>codeforces specialist, peak 1414 · leetcode top 14.7% · icpc regionalist · patches in [npm/cli](https://github.com/npm/cli/pull/8683), [rsyslog/loganalyzer](https://github.com/rsyslog/loganalyzer/pull/101) and [goodroot/hyprwhspr](https://github.com/goodroot/hyprwhspr/pull/215)</sub>
