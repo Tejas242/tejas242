@@ -1,52 +1,32 @@
-<h1 align="center">Hey, I'm Tejas</h1>
+<img src="assets/sky.svg" width="100%" alt="A pixel-art night city under Saturn; every lit window is a day I pushed code in the last year">
 
-<p align="center">
-  <b>CS student | Systems & AI | Always on screen</b>
-</p>
+<sub>every lit window is a day of mine on GitHub this past year, redrawn each night</sub>
 
-<p align="center">
-  <a href="https://screenager.dev" target="_blank">
-    <img alt="Blog" src="https://img.shields.io/badge/portfolio-screenager.dev-black?style=for-the-badge&logo=vercel&logoColor=white">
-  </a>
-  <a href="https://github.com/tejas242?tab=repositories" target="_blank">
-    <img alt="Projects" src="https://img.shields.io/badge/projects-GitHub-blue?style=for-the-badge&logo=github">
-  </a>
-</p>
+**Tejas Mahajan** · [screenager.dev](https://screenager.dev)
 
-## GitHub Stats
+I like knowing how things work underneath, and the surest way I know is to
+build them myself. Mostly that means search engines and distributed systems.
+The rest of the time it is contest problems, and writing down whatever
+finally clicked.
 
-<div align="center">
-  
-[![GitHub Stats](./profile/stats.svg)](https://github.com/tejas242)
-[![Top Languages](./profile/top-langs.svg)](https://github.com/tejas242)
+#### work
 
-</div>
+- <img src="assets/logos/sift.svg" width="14" height="14"> [**sift**](https://github.com/tejas242/sift) · fast, local semantic search over code, docs and notes, from the terminal
+- <img src="assets/logos/search-engine-go.svg" width="14" height="14"> [**search-engine-go**](https://github.com/tejas242/search-engine-go) · a small, thread-safe document search engine on an inverted index
+- <img src="assets/logos/distributed-broadcast.svg" width="14" height="14"> [**distributed-broadcast**](https://github.com/tejas242/distributed-broadcast) · a gossip protocol that stays available across a 25-node cluster
+- <img src="assets/logos/arxiv-mcp.svg" width="14" height="14"> [**arxiv-mcp**](https://github.com/tejas242/arxiv-mcp) · lets AI assistants search arXiv and read papers
+- <img src="assets/logos/arqiv.svg" width="14" height="14"> [**ArQiv**](https://github.com/tejas242/ArQiv) · boolean, BM25, TF-IDF, vector and BERT ranking over one arXiv index
 
----
-
-**About Me**
-
-- I build things that think — AI, LLMs, and real-world apps.
-- I love clean systems, efficient design, and making stuff just work.
-- I went to ICPC Regionals.
-- I [write](https://screenager.dev/blog)
-
----
-
-**Tech I'm into**
-
-```bash
-> Lang       | C++, Golang, Python, TypeScript
-> AI/ML      | Deep Learning, LLMs, Vision, Kaggle, HF
-> Systems    | Networking, OS, Linux (btw, I use Arch)
-> Tools      | FastAPI, Next.js, Vector DBs, Postgres, Mongo
-> And much more...
-```
-
-**Latest from the Blog**
+#### writing
 
 <!-- BLOG:START -->
-- [What Actually Happens When You Press ^C?](https://screenager.dev/blog/2025/what-actually-happens-when-you-press-ctrl-c)
-- [Nerds Like to Ping](https://screenager.dev/blog/2025/why-ping-is-a-masterpiece-of-network-diagnostics)
-- [Git Diff Is Just LCS](https://screenager.dev/blog/2025/diff-algorithm-hunt-mcilroy)
+- [Everything falls into step](https://screenager.dev/blog/everything-falls-into-step/)
+- [Why can't you zip a zip?](https://screenager.dev/blog/why-you-cant-zip-a-zip/)
+- [Anatomy of a page](https://screenager.dev/blog/anatomy-of-a-page/)
 <!-- BLOG:END -->
+
+#### elsewhere
+
+[x](https://x.com/the_screenager) · [linkedin](https://www.linkedin.com/in/tejas242) · [codeforces](https://codeforces.com/profile/screenager) · [leetcode](https://leetcode.com/u/screenager) · [email](mailto:hello@screenager.dev)
+
+<sub>codeforces specialist, peak 1414 · leetcode top 14.7% · icpc regionals · patches in [npm/cli](https://github.com/npm/cli/pull/8683), [rsyslog/loganalyzer](https://github.com/rsyslog/loganalyzer/pull/101) and [goodroot/hyprwhspr](https://github.com/goodroot/hyprwhspr/pull/215)</sub>

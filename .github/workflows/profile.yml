@@ -1,0 +1,46 @@
+name: Profile
+
+# Off the hour on purpose: everyone else's cron runs at minute zero.
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/**, .github/workflows/profile.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile
+  cancel-in-progress: false
+
+jobs:
+  redraw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Latest writing
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: https://screenager.dev/rss.xml
+          max_post_count: 3
+          comment_tag_name: BLOG
+          template: "- [$title]($url)$newline"
+          commit_message: "chore: refresh writing"
+
+      - name: Redraw the night
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/sky.mjs "${{ github.repository_owner }}"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/sky.svg
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: redraw the night"
+          git push
