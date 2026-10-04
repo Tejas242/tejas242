@@ -19,9 +19,8 @@ finally clicked.
 
 #### writing
 
-<!-- BLOG:START -->
-- [Everything falls into step](https://screenager.dev/blog/everything-falls-into-step/)
-- [Why can't you zip a zip?](https://screenager.dev/blog/why-you-cant-zip-a-zip/)
+<!-- BLOG:START -->- [Everything falls into step](https://screenager.dev/blog/everything-falls-into-step/)
+- [Why can&#39;t you zip a zip?](https://screenager.dev/blog/why-you-cant-zip-a-zip/)
 - [Anatomy of a page](https://screenager.dev/blog/anatomy-of-a-page/)
 <!-- BLOG:END -->
 
