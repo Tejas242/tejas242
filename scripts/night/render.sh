@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Render a week of nights for the README banner: assets/nights/<mon..sun>.svg.
+# Render a week of nights for the README art: assets/nights/<mon..sun>.svg.
 #
 #   scripts/night/render.sh [seed-hex ...]     seven seeds, Monday first
 #
@@ -57,7 +57,6 @@ for i in "${!SEEDS[@]}"; do
     [ -s "$png" ] && break
   done
   [ -s "$png" ] || { echo "render.sh: no image for seed ${SEEDS[$i]}" >&2; exit 1; }
-  python3 "$ROOT/scripts/night/compose.py" "$png" "$SITE/src/assets/avatar.jpg" \
-    "$ROOT/assets/nights/${DAYS[$i]}.svg" "${SEEDS[$i]}"
+  python3 "$ROOT/scripts/night/compose.py" "$png" "$ROOT/assets/nights/${DAYS[$i]}.svg" "${SEEDS[$i]}"
 done
 cp "$ROOT/assets/nights/$(date -u +%a | tr '[:upper:]' '[:lower:]').svg" "$ROOT/assets/night.svg"

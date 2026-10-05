@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""Turn a rendered night into the README banner.
+"""Turn a rendered night into the README's art.
 
-usage: compose.py <night.png> <portrait> <out.svg> [seed]
+usage: compose.py <night.png> <out.svg> [seed]
 
 The night is screenager.dev's own header, rendered at 830x300 CSS px and 2x
-density (see render.sh). This adds what a still image can't carry:
+density (see render.sh). This adds what a still image can't carry, all of it
+moving in whole art pixels like the site's renderer:
 
-  - stars blink in pixel steps, the way the site's renderer twinkles them
-  - a few lit windows switch off and on again over the evening
-  - now and then a shooting star crosses, moving in whole art pixels
-  - the portrait sits on the horizon, half in the night, as on the site
+  - stars blink, each on its own clock
+  - lit windows go dark for a while, and a few dark ones come on
+  - now and then a shooting star falls, two of them on different schedules
+  - once in a long while a satellite crosses the top of the sky
 
-Everything is one self-contained SVG (CSS animation, inline images), so it
-renders through GitHub's image proxy, and it stands still for readers who
-prefer reduced motion. Stars and windows are found in the pixels themselves,
-so any seed works.
+One self-contained SVG (CSS animation, inline image), so it renders through
+GitHub's image proxy, and it stands still for readers who prefer reduced
+motion. Stars and windows are found in the pixels themselves, so any seed works.
 """
 import base64, io, random, sys
 from collections import deque
@@ -22,15 +22,12 @@ from collections import deque
 import numpy as np
 from PIL import Image
 
-night_path, portrait_path, out_path = sys.argv[1:4]
-seed = sys.argv[4] if len(sys.argv) > 4 else night_path
-rand = random.Random(seed)
+night_path, out_path = sys.argv[1:3]
+rand = random.Random(sys.argv[3] if len(sys.argv) > 3 else night_path)
 
 W, H, DPR = 830, 300, 2  # CSS size of the night, and its pixel density
-TILE, INSET = 112, 6  # the portrait frame, as on the site's home page
 ART = 3  # one art pixel, in CSS px
-SKY = "#0f150e"  # --night-sky, also the site's page background
-RULE = "#353e33"  # --rule-strong in the site's dark theme
+STAR = "#dfe4d9"  # --night-star
 
 img = Image.open(night_path).convert("RGB")
 assert img.size == (W * DPR, H * DPR), f"expected {W * DPR}x{H * DPR}, got {img.size}"
@@ -86,70 +83,79 @@ def off_planet(box):
 
 
 stars = [bx for bx in components(sky & (lum > 110) & (chroma < 26)) if off_planet(bx)]
-lit = np.zeros(lum.shape, bool)
-lit[int(H * DPR * 0.55):] = True
+town = np.zeros(lum.shape, bool)
+town[int(H * DPR * 0.55):] = True
 lamps = (r > 170) & (g > 120) & (b < 130) & (r - b > 60)
 screens = (g > 170) & (r < 160) & (b < 160)
-windows = components(lit & (lamps | screens))
+windows = components(town & (lamps | screens))
 
-# ── SVG ──────────────────────────────────────────────────────────────────────
-def data_uri(image, fmt):
+
+def data_uri(image):
     buf = io.BytesIO()
-    image.save(buf, fmt, optimize=True)
-    return f"data:image/{fmt.lower()};base64," + base64.b64encode(buf.getvalue()).decode()
+    image.save(buf, "PNG", optimize=True)
+    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+def rect(cls, t, d, box, fill):
+    x0, y0, x1, y1 = box
+    return (f'<rect class="{cls}" style="--t:{t:.2f}s;--d:{d:.2f}s" x="{css(x0)}" y="{css(y0)}" '
+            f'width="{css(x1 - x0 + 1)}" height="{css(y1 - y0 + 1)}" fill="{fill}"/>')
+
+
+def streak(sx, sy, dx, dy):
+    """A shooting star's head and fading tail, laid back along its path."""
+    k = dy / dx
+    return "".join(f'<rect x="{sx - i * 1.6 * ART:.1f}" y="{sy - i * 1.6 * ART * k:.1f}" width="{ART}" '
+                   f'height="{ART}" fill="{STAR}" opacity="{1 - i * 0.16:.2f}"/>' for i in range(6))
 
 
 palette = img.quantize(colors=256, method=Image.Quantize.MAXCOVERAGE, dither=Image.Dither.NONE)
-portrait = Image.open(portrait_path).convert("RGB")
-side = (TILE - 2 * INSET) * DPR
-portrait = portrait.resize((side, side), Image.LANCZOS)
-
-total_h = H + TILE // 2 + 1
 out = [
-    f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{total_h}" viewBox="0 0 {W} {total_h}">',
-    "<title>A pixel-art night over a city, the header of screenager.dev, with Tejas's portrait on the horizon</title>",
+    f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
+    "<title>A pixel-art night over a city, from screenager.dev: stars blink, windows go dark and light up, "
+    "and now and then something falls</title>",
     "<style>",
     ".px{image-rendering:pixelated;image-rendering:crisp-edges}",
     "@keyframes twinkle{0%,100%{opacity:0}50%{opacity:.85}}",
-    "@keyframes flicker{0%,82%,100%{opacity:0}84%,97%{opacity:1}}",
+    "@keyframes dark{0%,82%,100%{opacity:0}84%,97%{opacity:1}}",
+    "@keyframes light{0%,82%,100%{opacity:1}84%,97%{opacity:0}}",
     "@keyframes fall{0%{transform:translate(0,0);opacity:0}1%{opacity:1}"
     "9%{transform:translate(var(--dx),var(--dy));opacity:0}100%{transform:translate(var(--dx),var(--dy));opacity:0}}",
+    "@keyframes orbit{0%{transform:translateX(0)}70%,100%{transform:translateX(var(--dx))}}",
+    "@keyframes beacon{0%,100%{opacity:.35}50%{opacity:.9}}",
     ".tw{opacity:0;animation:twinkle var(--t) steps(3,jump-none) var(--d) infinite}",
-    ".fl{opacity:0;animation:flicker var(--t) steps(1,end) var(--d) infinite}",
-    ".fall{opacity:0;animation:fall 13s steps(26,end) 4s infinite}",
-    "@media (prefers-reduced-motion:reduce){.tw,.fl,.fall{animation:none;opacity:0}}",
+    ".off{opacity:0;animation:dark var(--t) steps(1,end) var(--d) infinite}",
+    ".on{opacity:1;animation:light var(--t) steps(1,end) var(--d) infinite}",
+    ".fall{opacity:0;animation:fall var(--t) steps(26,end) var(--d) infinite}",
+    f".sat{{animation:orbit 95s steps({W // ART},end) -20s infinite}}",
+    ".sat rect{animation:beacon 2.4s steps(2,jump-none) infinite}",
+    "@media (prefers-reduced-motion:reduce){.tw,.off,.fall,.sat,.sat rect{animation:none}.tw,.off,.fall{opacity:0}"
+    ".on{opacity:1}.sat{display:none}}",
     "</style>",
-    f'<image class="px" width="{W}" height="{H}" href="{data_uri(palette, "PNG")}"/>',
+    f'<image class="px" width="{W}" height="{H}" href="{data_uri(palette)}"/>',
 ]
 
 # a twinkle dims a star by laying the sky beside it over it
-for x0, y0, x1, y1 in rand.sample(stars, min(len(stars), 40)):
-    t, d = rand.uniform(2.4, 6.5), -rand.uniform(0, 6.5)
-    out.append(f'<rect class="tw" style="--t:{t:.2f}s;--d:{d:.2f}s" x="{css(x0)}" y="{css(y0)}" '
-               f'width="{css(x1 - x0 + 1)}" height="{css(y1 - y0 + 1)}" fill="{hexat(x0 - 2, y0)}"/>')
+for box in rand.sample(stars, min(len(stars), 40)):
+    out.append(rect("tw", rand.uniform(2.4, 6.5), -rand.uniform(0, 6.5), box, hexat(box[0] - 2, box[1])))
 
-# a few windows go dark for a while, each on its own clock
-for x0, y0, x1, y1 in rand.sample(windows, min(len(windows), 8)):
-    t, d = rand.uniform(9, 23), -rand.uniform(0, 23)
-    out.append(f'<rect class="fl" style="--t:{t:.2f}s;--d:{d:.2f}s" x="{css(x0)}" y="{css(y0)}" '
-               f'width="{css(x1 - x0 + 1)}" height="{css(y1 - y0 + 1)}" fill="{hexat(x0 - 1, y1 + 2)}"/>')
+# windows keep their own hours: most go dark for a while, a few start dark and come on
+lit = rand.sample(windows, min(len(windows), 12))
+for i, box in enumerate(lit):
+    cls = "on" if i % 4 == 0 else "off"
+    out.append(rect(cls, rand.uniform(9, 23), -rand.uniform(0, 23), box, hexat(box[0] - 1, box[3] + 2)))
 
-# a shooting star: a head and a fading tail of art pixels, sliding down-right
-sx, sy = rand.uniform(40, W * 0.35), rand.uniform(12, 40)
-dx, dy = 210, 66
-trail = []
-for i in range(6):
-    k = i * 1.6
-    trail.append(f'<rect x="{sx - k * ART * 1.0:.1f}" y="{sy - k * ART * dy / dx:.1f}" width="{ART}" height="{ART}" '
-                 f'fill="#dfe4d9" opacity="{1 - i * 0.16:.2f}"/>')
-out.append(f'<g class="fall" style="--dx:{dx}px;--dy:{dy}px">' + "".join(trail) + "</g>")
+# two shooting stars on schedules that rarely line up
+for t, delay in ((13, 4), (29, 17)):
+    sx, sy = rand.uniform(40, W * 0.45), rand.uniform(10, 46)
+    dx, dy = rand.uniform(170, 240), rand.uniform(50, 80)
+    out.append(f'<g class="fall" style="--t:{t}s;--d:{delay}s;--dx:{dx:.0f}px;--dy:{dy:.0f}px">'
+               + streak(sx, sy, dx, dy) + "</g>")
 
-# the horizon, and the portrait seated on it
-out.append(f'<rect x="0" y="{H - 1}" width="{W}" height="1" fill="{RULE}"/>')
-tx, ty = (W - TILE) / 2, H - TILE / 2
-out.append(f'<rect x="{tx + 0.5}" y="{ty + 0.5}" width="{TILE - 1}" height="{TILE - 1}" fill="{SKY}" stroke="{RULE}"/>')
-out.append(f'<image x="{tx + INSET}" y="{ty + INSET}" width="{TILE - 2 * INSET}" height="{TILE - 2 * INSET}" '
-           f'href="{data_uri(portrait, "JPEG")}"/>')
+# a satellite: one dim pixel crossing the top of the sky, then gone for a while
+sy = rand.choice(range(6, 30, ART))
+out.append(f'<g class="sat" style="--dx:{W + 2 * ART}px"><rect x="{-ART}" y="{sy}" width="{ART}" height="{ART}" '
+           f'fill="#bfcab8"/></g>')
 out.append("</svg>")
 
 with open(out_path, "w") as f:

@@ -23,7 +23,7 @@ jobs:
         run: cp "assets/nights/$(date -u +%a | tr '[:upper:]' '[:lower:]').svg" assets/night.svg
 
       - name: Latest writing
-        run: python3 scripts/writing.py README.md 4
+        run: python3 scripts/writing.py README.md 5
 
       - name: Commit
         run: |
