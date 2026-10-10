@@ -19,8 +19,8 @@ from fontTools.varLib.instancer import instantiateVariableFont
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FONTS = pathlib.Path(os.environ.get("SITE", "~/portfolio/screenager.dev")).expanduser() / "src/assets/fonts"
 
-WORD, LINE = "tejas", "backend  ·  search  ·  llm tooling  ·  go"
-ALT = "tejas. backend, search, llm tooling, go"
+WORD, LINE = "screenager", "backend  ·  search  ·  llm tooling  ·  go"
+ALT = "screenager. backend, search, llm tooling, go"
 W, H = 960, 250
 BASE, SIZE, DOTS = 126, 132, 182  # wordmark baseline and size; the palette sits clear of the j
 PIXEL, GAP = 22, 9  # the full stop and the space before it

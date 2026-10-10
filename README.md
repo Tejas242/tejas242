@@ -3,7 +3,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-  <img src="assets/header-dark.svg" alt="tejas. backend, search, llm tooling, go" width="560">
+  <img src="assets/header-dark.svg" alt="screenager. backend, search, llm tooling, go" width="560">
 </picture>
 
 <br>
