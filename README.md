@@ -11,8 +11,6 @@
 
 <a href="https://screenager.dev"><img src="assets/night.svg" width="100%" alt="A pixel-art night over a city, from screenager.dev: stars blink, windows go dark and light up, and now and then something falls"></a>
 
-<sub>tonight's sky over screenager.dev · there is a different one for every day of the week</sub>
-
 <br>
 <br>
 I build things to find out how they work. Sometimes they work.<br>
