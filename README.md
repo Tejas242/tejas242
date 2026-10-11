@@ -14,8 +14,7 @@
 <br>
 <br>
 I build things to find out how they work. Sometimes they work.<br>
-I ship production Python and TypeScript: document ingestion, hybrid search and the tool servers LLMs call.<br>
-On the side I write Go to see how things work, then write down what happened.<br>
+On the side I write, play with Claude, experiment with System Languages, Solve Problems and rice my linux, then write down what happened.<br>
 ICPC Asia West regionalist, 2025–26.
 
 <br>
