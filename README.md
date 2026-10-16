@@ -31,6 +31,11 @@ ICPC Asia West regionalist, 2025–26.
 
 ## projects
 
+<a href="https://tejas242.github.io/ember/"><img src="assets/marks/ember.svg" width="44" height="44" align="left" alt="ember"></a>
+**[ember](https://github.com/Tejas242/ember)** &nbsp;a dynamic island for wayland that knows what claude code is doing, then falls asleep at night<br>
+<sub>go · wayland · drawn in software, no gpu · <a href="https://tejas242.github.io/ember/">its own site</a></sub>
+<br clear="left">
+
 <a href="https://github.com/Tejas242/sift"><img src="assets/marks/sift.svg" width="44" height="44" align="left" alt="sift"></a>
 **[sift](https://github.com/Tejas242/sift)** &nbsp;semantic search over a folder of code and notes, offline, on the CPU<br>
 <sub>go · onnx runtime · bubble tea · an HNSW index written from scratch</sub>
