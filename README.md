@@ -64,11 +64,11 @@ ICPC Asia West regionalist, 2025–26.
 ## writing
 
 <!-- writing:start -->
+`2026`&nbsp; [edge and Ember: a practice coach that locks my AI, and an island to watch it work](https://screenager.dev/blog/my-laptop-wont-let-me-use-claude/)<br>
 `2026`&nbsp; [A typeface from one letter](https://screenager.dev/blog/a-typeface-from-one-letter/)<br>
 `2026`&nbsp; [Everything falls into step](https://screenager.dev/blog/everything-falls-into-step/)<br>
 `2026`&nbsp; [Why can’t you zip a zip?](https://screenager.dev/blog/why-you-cant-zip-a-zip/)<br>
-`2026`&nbsp; [Anatomy of a page](https://screenager.dev/blog/anatomy-of-a-page/)<br>
-`2025`&nbsp; [What actually happens when you press ^C?](https://screenager.dev/blog/what-actually-happens-when-you-press-ctrl-c/)
+`2026`&nbsp; [Anatomy of a page](https://screenager.dev/blog/anatomy-of-a-page/)
 <!-- writing:end -->
 
 <br>
